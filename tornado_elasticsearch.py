@@ -113,7 +113,7 @@ class AsyncHttpConnection(Connection):
             pass
         elif isinstance(http_auth, (tuple, list)):
             self._auth_user, self._auth_password = http_auth
-        elif isinstance(http_auth, str):
+        elif isinstance(http_auth, (str, unicode)):
             self._auth_user, self._auth_password = http_auth.split(':')
         else:
             raise ValueError('HTTP Auth Credentials should be str or '
